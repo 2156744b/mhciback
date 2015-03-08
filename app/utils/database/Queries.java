@@ -33,7 +33,7 @@ public class Queries {
 			String result = "";
 
 			while (rs.next())
-				result += rs.getString(0);
+				result += rs.getString(1);
 
 			return result;
 
