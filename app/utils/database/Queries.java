@@ -19,7 +19,7 @@ public class Queries {
 		ResultSet rs = null;
 
 		if (c == null) {
-			Logger.error(this.getClass() + " connection null");
+			Logger.error(this.getClass().getName() + " connection null");
 			return CONNECTION_ERROR;
 		}
 
@@ -38,7 +38,7 @@ public class Queries {
 			return result;
 
 		} catch (SQLException e) {
-			Logger.error(e.toString());
+			Logger.error(this.getClass().getName() + " " + e.toString());
 
 		} finally {
 			try {
@@ -49,7 +49,7 @@ public class Queries {
 				if (c != null)
 					p.disconnect(c);
 			} catch (SQLException e) {
-				Logger.error(e.toString());
+				Logger.error(this.getClass().getName() + " " + e.toString());
 			}
 		}
 
