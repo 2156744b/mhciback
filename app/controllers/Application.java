@@ -21,7 +21,7 @@ public class Application extends Controller {
 		if (postgis != null)
 			return ok(Json.toJson(postgis));
 
-		return internalServerError();
+		return status(500);
 
 	}
 
