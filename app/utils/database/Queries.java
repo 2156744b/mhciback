@@ -6,12 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import play.Logger;
+import utils.helpers.PostgisVersion;
 
 public class Queries {
 
 	public final String CONNECTION_ERROR = "Connection error";
 
-	public String postgis_version() {
+	public PostgisVersion postgis_version() {
 
 		PSQLConnection p = new PSQLConnection();
 		Connection c = p.connect();
@@ -20,7 +21,7 @@ public class Queries {
 
 		if (c == null) {
 			Logger.error(this.getClass().getName() + " connection null");
-			return CONNECTION_ERROR;
+			return null;
 		}
 
 		try {
@@ -35,7 +36,7 @@ public class Queries {
 			if (rs.next())
 				result += rs.getString(1);
 
-			return result;
+			return new PostgisVersion(result);
 
 		} catch (SQLException e) {
 			Logger.error(this.getClass().getName() + " " + e.toString());
@@ -53,7 +54,7 @@ public class Queries {
 			}
 		}
 
-		return CONNECTION_ERROR;
+		return null;
 
 	}
 }
