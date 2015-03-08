@@ -1,6 +1,6 @@
 // @SOURCE:/home/crunchbang/documents/MobHCI/mhciback/conf/routes
 // @HASH:9c24f09449355737d0bfbe9ca53280febbd777c7
-// @DATE:Sun Mar 08 00:35:35 GMT 2015
+// @DATE:Sun Mar 08 01:01:56 GMT 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
