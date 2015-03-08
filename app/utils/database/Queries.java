@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import play.Logger;
+
 public class Queries {
 
 	public final String CONNECTION_ERROR = "Connection error";
@@ -16,8 +18,10 @@ public class Queries {
 		PreparedStatement st = null;
 		ResultSet rs = null;
 
-		if (c == null)
+		if (c == null) {
+			Logger.error(this.getClass() + " connection null");
 			return CONNECTION_ERROR;
+		}
 
 		try {
 
@@ -30,11 +34,11 @@ public class Queries {
 
 			while (rs.next())
 				result += rs.getString(0);
-			
+
 			return result;
 
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Logger.error(e.toString());
 
 		} finally {
 			try {
@@ -45,12 +49,11 @@ public class Queries {
 				if (c != null)
 					p.disconnect(c);
 			} catch (SQLException e) {
-				e.printStackTrace();
+				Logger.error(e.toString());
 			}
 		}
 
 		return CONNECTION_ERROR;
 
 	}
-
 }

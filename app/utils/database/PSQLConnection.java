@@ -2,6 +2,7 @@ package utils.database;
 
 
 import java.sql.DriverManager;
+import play.Logger;
 import java.sql.Connection;
 import java.sql.SQLException;
 
@@ -12,7 +13,7 @@ public class PSQLConnection {
 		try {
 			Class.forName("org.postgresql.Driver");
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			Logger.error(e.toString());
 			return null;
 		}
 
@@ -28,7 +29,7 @@ public class PSQLConnection {
 			connection = DriverManager.getConnection("jdbc:postgresql://" + host
 					+ ":" + port + "/" + database, username, password);
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Logger.error(e.toString());
 			return null;
 		}
 
@@ -40,7 +41,7 @@ public class PSQLConnection {
 		try {
 			c.close();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			Logger.error(e.toString());
 		}
 	}
 
