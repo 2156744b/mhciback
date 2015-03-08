@@ -26,6 +26,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/controllers/ReverseAssets.class[0m
 [0m[[0mdebug[0m] [0m	views/html/index$$anonfun$f$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/views/html/index$$anonfun$f$1.class[0m
+[0m[[0mdebug[0m] [0m	database[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/database[0m
 [0m[[0mdebug[0m] [0m	public/images[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/public/images[0m
 [0m[[0mdebug[0m] [0m	controllers/ref/ReverseApplication.class[0m
@@ -40,6 +42,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/controllers/ref/ReverseAssets.class[0m
 [0m[[0mdebug[0m] [0m	Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.class[0m
+[0m[[0mdebug[0m] [0m	database/PSQLConnection.class[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/database/PSQLConnection.class[0m
 [0m[[0mdebug[0m] [0m	public/javascripts/jquery-1.9.0.min.js[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/public/javascripts/jquery-1.9.0.min.js[0m
 [0m[[0mdebug[0m] [0m	views/html/index$.class[0m
