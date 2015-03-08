@@ -12,6 +12,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/Routes$$anonfun$routes$1$$anonfun$applyOrElse$1.class[0m
 [0m[[0mdebug[0m] [0m	utils[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/utils[0m
+[0m[[0mdebug[0m] [0m	controllers/Application$Postgis_version.class[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/controllers/Application$Postgis_version.class[0m
 [0m[[0mdebug[0m] [0m	views/html/index.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/views/html/index.class[0m
 [0m[[0mdebug[0m] [0m	views/html/main$.class[0m
