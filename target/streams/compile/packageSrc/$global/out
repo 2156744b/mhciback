@@ -1,0 +1,11 @@
+[0m[[0minfo[0m] [0mPackaging /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/mhciback_2.10-1.0-SNAPSHOT-sources.jar ...[0m
+[0m[[0mdebug[0m] [0mInput file mappings:[0m
+[0m[[0mdebug[0m] [0m	openshift.conf[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/conf/openshift.conf[0m
+[0m[[0mdebug[0m] [0m	routes[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/conf/routes[0m
+[0m[[0mdebug[0m] [0m	application.conf[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/conf/application.conf[0m
+[0m[[0mdebug[0m] [0m	controllers/Application.java[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/app/controllers/Application.java[0m
+[0m[[0minfo[0m] [0mDone packaging.[0m
