@@ -1,0 +1,2 @@
+#!/bin/bash
+$play clean compile stage && git add . -A && git commit -am "Deployed on `date`" && git push openshift master
