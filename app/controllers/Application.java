@@ -19,7 +19,7 @@ public class Application extends Controller {
 			Class.forName("org.postgresql.Driver");
  
 		} catch (ClassNotFoundException e) {
-			dbstatus = e.printStackTrace();
+			dbstatus = e.toString();
 		}
  
  
@@ -38,16 +38,19 @@ public class Application extends Controller {
 					password);
  
 		} catch (SQLException e) {
- 			dbstatus = e.printStackTrace(); 
+ 			dbstatus = e.toString(); 
 		}
  
 		if (connection != null) {
 			dbstatus = "Connected!";
-			connection.close();
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				dbstatus = e.toString();
+			}
 		} else {
 			dbstatus = "Connection failed";
 		}
-	}
     	
         return ok(index.render("Hello mobile HCI experts, database status: " + dbstatus));
     }
