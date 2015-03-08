@@ -36,6 +36,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/database/package.html[0m
 [0m[[0mdebug[0m] [0m	lib/selected2-right.png[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/selected2-right.png[0m
+[0m[[0mdebug[0m] [0m	utils/database[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/utils/database[0m
 [0m[[0mdebug[0m] [0m	lib[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib[0m
 [0m[[0mdebug[0m] [0m	index/index-d.html[0m
@@ -98,6 +100,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/index/index-j.html[0m
 [0m[[0mdebug[0m] [0m	index/index-m.html[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/index/index-m.html[0m
+[0m[[0mdebug[0m] [0m	utils/database/PSQLConnection.html[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/utils/database/PSQLConnection.html[0m
 [0m[[0mdebug[0m] [0m	views/package.html[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/views/package.html[0m
 [0m[[0mdebug[0m] [0m	lib/template.css[0m
@@ -114,6 +118,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/views[0m
 [0m[[0mdebug[0m] [0m	index[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/index[0m
+[0m[[0mdebug[0m] [0m	index/index-q.html[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/index/index-q.html[0m
 [0m[[0mdebug[0m] [0m	lib/jquery.js[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/jquery.js[0m
 [0m[[0mdebug[0m] [0m	lib/packagesbg.gif[0m
@@ -138,6 +144,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/arrow-down.png[0m
 [0m[[0mdebug[0m] [0m	controllers/ref/ReverseAssets.html[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/controllers/ref/ReverseAssets.html[0m
+[0m[[0mdebug[0m] [0m	utils/database/package.html[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/utils/database/package.html[0m
 [0m[[0mdebug[0m] [0m	lib/filterboxbg.gif[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/filterboxbg.gif[0m
 [0m[[0mdebug[0m] [0m	lib/navigation-li.png[0m
@@ -160,14 +168,20 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/controllers/ref[0m
 [0m[[0mdebug[0m] [0m	lib/ownderbg2.gif[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/ownderbg2.gif[0m
+[0m[[0mdebug[0m] [0m	utils[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/utils[0m
 [0m[[0mdebug[0m] [0m	lib/filter_box_left.png[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/filter_box_left.png[0m
 [0m[[0mdebug[0m] [0m	index/index-s.html[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/index/index-s.html[0m
 [0m[[0mdebug[0m] [0m	lib/package_big.png[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/package_big.png[0m
+[0m[[0mdebug[0m] [0m	utils/package.html[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/utils/package.html[0m
 [0m[[0mdebug[0m] [0m	Routes$.html[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/Routes$.html[0m
+[0m[[0mdebug[0m] [0m	index/index-u.html[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/index/index-u.html[0m
 [0m[[0mdebug[0m] [0m	index.js[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/index.js[0m
 [0m[[0mdebug[0m] [0m	lib/ownerbg2.gif[0m
@@ -210,6 +224,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/selected2.png[0m
 [0m[[0mdebug[0m] [0m	controllers/package.html[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/controllers/package.html[0m
+[0m[[0mdebug[0m] [0m	utils/database/Queries.html[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/utils/database/Queries.html[0m
 [0m[[0mdebug[0m] [0m	index/index-c.html[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/index/index-c.html[0m
 [0m[[0minfo[0m] [0mDone packaging.[0m
