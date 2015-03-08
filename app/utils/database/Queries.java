@@ -32,7 +32,7 @@ public class Queries {
 
 			String result = "";
 
-			while (rs.next())
+			if (rs.next())
 				result += rs.getString(1);
 
 			return result;
