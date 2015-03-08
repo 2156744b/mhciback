@@ -5,3 +5,27 @@ project/target
 tmp
 .history
 dist
+
+# general
+*~
+*.log
+tmp
+dump
+ 
+# Eclipse
+.settings
+.cache
+.project
+.classpath 
+
+# SBT
+dist
+project/boot
+project/target
+project/plugins/target
+target
+.target
+ 
+# Play
+logs
+RUNNING_PID 
