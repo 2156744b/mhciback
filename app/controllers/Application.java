@@ -3,26 +3,22 @@ package controllers;
 import play.*;
 import play.mvc.*;
 import views.html.*;
-import database.PSQLConnection;
-import java.sql.Connection;
+
+import utils.database.*;
 
 public class Application extends Controller {
 
 	public static Result index() {
-
-		String dbstatus = "";
-
-		PSQLConnection p = new PSQLConnection();
-		Connection c = p.connect();
-
-		if (c != null) {
-			dbstatus = "Connected!";
-			p.disconnect(c);
-		} else
-			dbstatus = "Not connected";
-
-		return ok(index.render("Hello mobile HCI experts, <br> database status: "
-				+ dbstatus));
+		return ok(index.render("Hello mobile HCI experts"));
+	}
+	
+	public static Result postgis_version(){
+		
+		Queries q = new Queries();
+		String result = q.postgis_version();
+		
+		return ok(index.render(result));
+		
 	}
 
 }
