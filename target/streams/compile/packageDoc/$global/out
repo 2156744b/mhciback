@@ -4,6 +4,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/typebg.gif[0m
 [0m[[0mdebug[0m] [0m	lib/valuemembersbg.gif[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/valuemembersbg.gif[0m
+[0m[[0mdebug[0m] [0m	utils/helpers[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/utils/helpers[0m
 [0m[[0mdebug[0m] [0m	controllers/javascript/ReverseAssets.html[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/controllers/javascript/ReverseAssets.html[0m
 [0m[[0mdebug[0m] [0m	index/index-i.html[0m
@@ -218,12 +220,16 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/trait_diagram.png[0m
 [0m[[0mdebug[0m] [0m	database[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/database[0m
+[0m[[0mdebug[0m] [0m	utils/helpers/package.html[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/utils/helpers/package.html[0m
 [0m[[0mdebug[0m] [0m	lib/diagrams.js[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/diagrams.js[0m
 [0m[[0mdebug[0m] [0m	lib/selected2.png[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/lib/selected2.png[0m
 [0m[[0mdebug[0m] [0m	controllers/package.html[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/controllers/package.html[0m
+[0m[[0mdebug[0m] [0m	utils/helpers/PostgisVersion.html[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/utils/helpers/PostgisVersion.html[0m
 [0m[[0mdebug[0m] [0m	utils/database/Queries.html[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/api/utils/database/Queries.html[0m
 [0m[[0mdebug[0m] [0m	index/index-c.html[0m

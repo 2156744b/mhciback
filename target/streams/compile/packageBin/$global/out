@@ -8,12 +8,12 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/public/stylesheets[0m
 [0m[[0mdebug[0m] [0m	Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.class[0m
+[0m[[0mdebug[0m] [0m	utils/helpers/PostgisVersion.class[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/utils/helpers/PostgisVersion.class[0m
 [0m[[0mdebug[0m] [0m	Routes$$anonfun$routes$1$$anonfun$applyOrElse$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/Routes$$anonfun$routes$1$$anonfun$applyOrElse$1.class[0m
 [0m[[0mdebug[0m] [0m	utils[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/utils[0m
-[0m[[0mdebug[0m] [0m	controllers/Application$Postgis_version.class[0m
-[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/controllers/Application$Postgis_version.class[0m
 [0m[[0mdebug[0m] [0m	views/html/index.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/views/html/index.class[0m
 [0m[[0mdebug[0m] [0m	views/html/main$.class[0m
@@ -38,6 +38,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/public/images[0m
 [0m[[0mdebug[0m] [0m	controllers/ref/ReverseApplication.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/controllers/ref/ReverseApplication.class[0m
+[0m[[0mdebug[0m] [0m	utils/helpers[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/utils/helpers[0m
 [0m[[0mdebug[0m] [0m	controllers/javascript[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/controllers/javascript[0m
 [0m[[0mdebug[0m] [0m	controllers[0m
