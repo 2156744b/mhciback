@@ -73,7 +73,7 @@ public class Queries {
 		try {
 
 			// check if a user exists
-			String query = "select count(*) as total from users where email = ?";
+			String query = "select count(*) from users where email = ?";
 			st = c.prepareStatement(query);
 			st.setString(1, email);
 			Logger.error(st.toString());
@@ -82,8 +82,8 @@ public class Queries {
 			int result = -1;
 
 			while (rs.next())
-				result += rs.getInt("total");
-			Logger.error("result " + result);
+				result = rs.getInt(1);
+			
 			rs.close();
 			st.close();
 
@@ -95,7 +95,7 @@ public class Queries {
 				st.setString(1, email);
 				st.setString(2, username);
 				st.setString(3, gcmid);
-				Logger.error(st.toString());
+				
 				rs = st.executeQuery();
 
 				while (rs.next())
@@ -110,7 +110,7 @@ public class Queries {
 				st.setString(1, username);
 				st.setString(2, gcmid);
 				st.setString(3, email);
-				Logger.error(st.toString());
+				
 				rs = st.executeQuery();
 
 				while (rs.next())
