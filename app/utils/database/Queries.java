@@ -158,9 +158,10 @@ public class Queries {
 
 			String query = "select email, name from users where email = ?";
 			st = c.prepareStatement(query);
+			st.setString(1, email);
 
 			rs = st.executeQuery();
-
+			
 			while (rs.next())
 				response = new AddFriendResponse(200, rs.getString("email"),
 						rs.getString("name"));
