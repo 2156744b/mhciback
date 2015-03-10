@@ -4,8 +4,6 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/conf/routes[0m
 [0m[[0mdebug[0m] [0m	openshift.conf[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/conf/openshift.conf[0m
-[0m[[0mdebug[0m] [0m	database/PSQLConnection.java[0m
-[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/app/database/PSQLConnection.java[0m
 [0m[[0mdebug[0m] [0m	utils/database/PSQLConnection.java[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/app/utils/database/PSQLConnection.java[0m
 [0m[[0mdebug[0m] [0m	application.conf[0m
