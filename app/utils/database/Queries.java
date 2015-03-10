@@ -76,14 +76,14 @@ public class Queries {
 			String query = "select count(*) from users where email = ?";
 			st = c.prepareStatement(query);
 			st.setString(1, email);
-			Logger.error(st.toString());
+
 			rs = st.executeQuery();
 
 			int result = -1;
 
 			while (rs.next())
 				result = rs.getInt(1);
-			
+
 			rs.close();
 			st.close();
 
@@ -95,7 +95,7 @@ public class Queries {
 				st.setString(1, email);
 				st.setString(2, username);
 				st.setString(3, gcmid);
-				
+
 				rs = st.executeQuery();
 
 				while (rs.next())
@@ -110,7 +110,7 @@ public class Queries {
 				st.setString(1, username);
 				st.setString(2, gcmid);
 				st.setString(3, email);
-				
+
 				rs = st.executeQuery();
 
 				while (rs.next())
