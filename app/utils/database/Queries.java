@@ -76,14 +76,14 @@ public class Queries {
 			String query = "select count(*) from users where email = ?";
 			st = c.prepareStatement(query);
 			st.setString(1, email);
-
+			Logger.error(st.toString());
 			rs = st.executeQuery();
 
 			int result = -1;
 
 			while (rs.next())
 				result += rs.getInt(1);
-
+			Logger.error("result " + result);
 			rs.close();
 			st.close();
 
