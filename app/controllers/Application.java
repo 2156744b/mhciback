@@ -36,7 +36,7 @@ public class Application extends Controller {
 		int status = q.register(df.get("email"), df.get("username"),
 				df.get("gcmid"));
 
-		return ok("{ \"status\" : " + Json.toJson(status) + "}");
+		return ok("{ \"rstatus\" : " + Json.toJson(status) + "}");
 
 	}
 	
