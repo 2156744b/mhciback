@@ -1,6 +1,6 @@
 // @SOURCE:/home/crunchbang/documents/MobHCI/mhciback/conf/routes
-// @HASH:26132831f3363b33dd9b81f84a1b4b5c0240d730
-// @DATE:Tue Mar 10 15:53:35 GMT 2015
+// @HASH:91efe916e03592fdc386e4d68b6fc945604eebb7
+// @DATE:Tue Mar 10 19:39:25 GMT 2015
 
 
 import play.core._
@@ -33,17 +33,21 @@ private[this] lazy val controllers_Application_index0 = Route("GET", PathPattern
         
 
 // @LINE:7
-private[this] lazy val controllers_Application_postgis_version1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("postgis"))))
+private[this] lazy val controllers_Application_postgisVersion1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("postgis"))))
         
 
 // @LINE:8
 private[this] lazy val controllers_Application_register2 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("register"))))
         
 
-// @LINE:11
-private[this] lazy val controllers_Assets_at3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:9
+private[this] lazy val controllers_Application_addFriend3 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("addFriend"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """postgis""","""controllers.Application.postgis_version()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:12
+private[this] lazy val controllers_Assets_at4 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """postgis""","""controllers.Application.postgisVersion()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addFriend""","""controllers.Application.addFriend()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -60,9 +64,9 @@ case controllers_Application_index0(params) => {
         
 
 // @LINE:7
-case controllers_Application_postgis_version1(params) => {
+case controllers_Application_postgisVersion1(params) => {
    call { 
-        invokeHandler(controllers.Application.postgis_version(), HandlerDef(this, "controllers.Application", "postgis_version", Nil,"GET", """""", Routes.prefix + """postgis"""))
+        invokeHandler(controllers.Application.postgisVersion(), HandlerDef(this, "controllers.Application", "postgisVersion", Nil,"GET", """""", Routes.prefix + """postgis"""))
    }
 }
         
@@ -75,8 +79,16 @@ case controllers_Application_register2(params) => {
 }
         
 
-// @LINE:11
-case controllers_Assets_at3(params) => {
+// @LINE:9
+case controllers_Application_addFriend3(params) => {
+   call { 
+        invokeHandler(controllers.Application.addFriend(), HandlerDef(this, "controllers.Application", "addFriend", Nil,"POST", """""", Routes.prefix + """addFriend"""))
+   }
+}
+        
+
+// @LINE:12
+case controllers_Assets_at4(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }
