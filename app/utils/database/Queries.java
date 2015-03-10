@@ -95,7 +95,7 @@ public class Queries {
 				st.setString(1, email);
 				st.setString(2, username);
 				st.setString(3, gcmid);
-
+				Logger.error(st.toString());
 				rs = st.executeQuery();
 
 				while (rs.next())
