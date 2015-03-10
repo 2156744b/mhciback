@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import play.Logger;
+import utils.helpers.AddFriendResponse;
 import utils.helpers.PostgisVersion;
 
 public class Queries {
@@ -137,6 +138,53 @@ public class Queries {
 		}
 
 		return -1;
+	}
+
+	public AddFriendResponse addFriend(String email) {
+
+		PSQLConnection p = new PSQLConnection();
+		Connection c = p.connect();
+		PreparedStatement st = null;
+		ResultSet rs = null;
+
+		AddFriendResponse response = new AddFriendResponse(-1);
+
+		if (c == null) {
+			Logger.error(this.getClass().getName() + " connection null");
+			return null;
+		}
+
+		try {
+
+			String query = "select email, name from users where email = ?";
+			st = c.prepareStatement(query);
+
+			rs = st.executeQuery();
+
+			while (rs.next())
+				response = new AddFriendResponse(200, rs.getString("email"),
+						rs.getString("name"));
+
+			return response;
+
+		} catch (SQLException e) {
+			Logger.error(this.getClass().getName() + " " + e.toString());
+
+		} finally {
+			try {
+				if (st != null)
+					st.close();
+				if (rs != null)
+					rs.close();
+				if (c != null)
+					p.disconnect(c);
+			} catch (SQLException e) {
+				Logger.error(this.getClass().getName() + " " + e.toString());
+			}
+		}
+
+		return response;
+
 	}
 
 }

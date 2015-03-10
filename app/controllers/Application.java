@@ -6,6 +6,7 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import utils.database.Queries;
+import utils.helpers.AddFriendResponse;
 import utils.helpers.PostgisVersion;
 import views.html.index;
 
@@ -15,7 +16,7 @@ public class Application extends Controller {
 		return ok(index.render("Hello mobile HCI experts"));
 	}
 
-	public static Result postgis_version() {
+	public static Result postgisVersion() {
 
 		Queries q = new Queries();
 		PostgisVersion postgis = q.postgis_version();
@@ -37,6 +38,17 @@ public class Application extends Controller {
 
 		return ok("{ \"status\" : " + Json.toJson(status) + "}");
 
+	}
+	
+	public static Result addFriend(){
+		
+		DynamicForm df = Form.form().bindFromRequest();
+
+		Queries q = new Queries();
+		AddFriendResponse response = q.addFriend(df.get("email"));
+		
+		return ok(Json.toJson(response));
+		
 	}
 
 }
