@@ -1,5 +1,7 @@
 package controllers;
 
+import play.data.DynamicForm;
+import play.data.Form;
 import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
@@ -22,6 +24,18 @@ public class Application extends Controller {
 			return ok(Json.toJson(postgis));
 
 		return status(500);
+
+	}
+
+	public static Result register() {
+
+		DynamicForm df = Form.form().bindFromRequest();
+
+		Queries q = new Queries();
+		int status = q.register(df.get("email"), df.get("username"),
+				df.get("gcmid"));
+
+		return ok("{ \"status\" : " + Json.toJson(status) + "}");
 
 	}
 
