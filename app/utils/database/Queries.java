@@ -90,7 +90,7 @@ public class Queries {
 			// if not exist, create the user
 			if (result == 0) {
 
-				query = "insert into users(email, name, gcmid) values(?,?,?)";
+				query = "insert into users(email, name, gcmid) values(?,?,?) returning email";
 				st = c.prepareStatement(query);
 				st.setString(1, email);
 				st.setString(2, username);
@@ -105,7 +105,7 @@ public class Queries {
 			// if exist, update user info
 			else {
 
-				query = "update users set name = ?, gcmid = ? where email = ?";
+				query = "update users set name = ?, gcmid = ? where email = ? returning email";
 				st = c.prepareStatement(query);
 				st.setString(1, username);
 				st.setString(2, gcmid);
