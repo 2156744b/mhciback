@@ -236,9 +236,7 @@ public class Queries {
 			ArrayList<PublicEvent> events = new ArrayList<PublicEvent>();
 
 			while (rs.next()) {
-				Logger.info(rs.getInt("id") + rs.getInt("type")
-						+ rs.getString("evdate") + rs.getString("poster")
-						+ rs.getString("description"));
+
 				events.add(new PublicEvent(rs.getInt("id"), rs.getInt("type"),
 						rs.getString("evdate"), rs.getString("poster"), rs
 								.getString("description"), rs.getString("lat"),
