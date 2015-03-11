@@ -10,7 +10,6 @@ import utils.helpers.AddFriendResponse;
 import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
 import views.html.index;
-import com.google.gson.*;
 
 public class Application extends Controller {
 
@@ -61,8 +60,8 @@ public class Application extends Controller {
 		NearbyPublicEventsResponse response = q.getNearbyPublicEvents(
 				df.get("lat"), df.get("lon"), df.get("radius"));
 
-		Gson gson = new Gson();
-		return ok(gson.toJson(response));
+		return ok("{ \"rstatus\" :" + Json.toJson(response.rstatus)
+				+ ", \"events\" :" + Json.toJson(response.events) + "}");
 
 	}
 

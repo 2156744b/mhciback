@@ -7,7 +7,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#mhciback_2.10;1.0-SNAPSHOT [compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->org.scala-lang#scala-library;2.10.3 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.3 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@568b43ab[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@65b80dab[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	local: revision in cache: org.scala-lang#scala-library;2.10.3[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.3 in sbt-chain[0m
@@ -768,15 +768,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.6->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving com.google.code.gson#gson;2.3.1 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.google.code.gson#gson;2.3.1 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.google.code.gson#gson;2.3.1[0m
-[0m[[0mdebug[0m] [0m	local: revision in cache: com.google.code.gson#gson;2.3.1[0m
-[0m[[0mdebug[0m] [0m	found com.google.code.gson#gson;2.3.1 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'runtime'[0m
@@ -1214,10 +1205,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.6->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0mresolving dependencies for configuration 'test'[0m
@@ -1656,10 +1643,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.6->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play-test_2.10;2.2.6 [test->default(compile)][0m
@@ -3037,10 +3020,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.6->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#mhciback_2.10;1.0-SNAPSHOT [optional][0m
@@ -3481,10 +3460,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.6->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#mhciback_2.10;1.0-SNAPSHOT [optional][0m
@@ -3925,10 +3900,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies net.sf.ehcache#ehcache-core;2.6.6->org.slf4j#slf4j-api;1.7.5 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.play#play-cache_2.10;2.2.6->net.sf.ehcache#ehcache-core;2.6.6 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->runtime][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->compile][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.google.code.gson#gson;2.3.1 [compile->master][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play-java_2.10;2.2.6 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#mhciback_2.10;1.0-SNAPSHOT->com.typesafe.play#play-test_2.10;2.2.6 [test->default(compile)][0m
@@ -5131,7 +5102,6 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-jdbc_2.10;2.2.6!play-java-jdbc_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java-ebean_2.10;2.2.6!play-java-ebean_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-cache_2.10;2.2.6!play-cache_2.10.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.google.code.gson#gson;2.3.1!gson.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play_2.10;2.2.6!play_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-java_2.10;2.2.6!play-java_2.10.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.play#play-jdbc_2.10;2.2.6!play-jdbc_2.10.jar[0m
@@ -5253,7 +5223,7 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#scala-compiler;2.10.3!scala-compiler.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.3!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 16941ms :: artifacts dl 370ms[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 15810ms :: artifacts dl 327ms[0m
 [0m[[0mdebug[0m] [0m	report for default#mhciback_2.10;1.0-SNAPSHOT compile produced in /home/crunchbang/documents/MobHCI/mhciback/target/resolution-cache/reports/default-mhciback_2.10-compile.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#mhciback_2.10;1.0-SNAPSHOT runtime produced in /home/crunchbang/documents/MobHCI/mhciback/target/resolution-cache/reports/default-mhciback_2.10-runtime.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#mhciback_2.10;1.0-SNAPSHOT test produced in /home/crunchbang/documents/MobHCI/mhciback/target/resolution-cache/reports/default-mhciback_2.10-test.xml[0m
@@ -5267,5 +5237,5 @@
 [0m[[0mdebug[0m] [0m	report for default#mhciback_2.10;1.0-SNAPSHOT docs produced in /home/crunchbang/documents/MobHCI/mhciback/target/resolution-cache/reports/default-mhciback_2.10-docs.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#mhciback_2.10;1.0-SNAPSHOT pom produced in /home/crunchbang/documents/MobHCI/mhciback/target/resolution-cache/reports/default-mhciback_2.10-pom.xml[0m
 [0m[[0mdebug[0m] [0m	report for default#mhciback_2.10;1.0-SNAPSHOT scala-tool produced in /home/crunchbang/documents/MobHCI/mhciback/target/resolution-cache/reports/default-mhciback_2.10-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (16941ms resolve - 370ms download)[0m
+[0m[[0mdebug[0m] [0m	resolve done (15810ms resolve - 327ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m
