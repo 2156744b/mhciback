@@ -7,6 +7,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import utils.database.Queries;
 import utils.helpers.AddFriendResponse;
+import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
 import views.html.index;
 
@@ -39,16 +40,28 @@ public class Application extends Controller {
 		return ok("{ \"rstatus\" : " + Json.toJson(status) + "}");
 
 	}
-	
-	public static Result addFriend(){
-		
+
+	public static Result addFriend() {
+
 		DynamicForm df = Form.form().bindFromRequest();
 
 		Queries q = new Queries();
 		AddFriendResponse response = q.addFriend(df.get("email"));
-		
+
 		return ok(Json.toJson(response));
-		
+
+	}
+
+	public static Result nearbyPublicEvents() {
+
+		DynamicForm df = Form.form().bindFromRequest();
+
+		Queries q = new Queries();
+		NearbyPublicEventsResponse response = q.getNearbyPublicEvents(
+				df.get("lat"), df.get("lon"), df.get("radius"));
+
+		return ok(Json.toJson(response));
+
 	}
 
 }
