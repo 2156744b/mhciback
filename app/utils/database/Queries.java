@@ -4,10 +4,13 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import play.Logger;
 import utils.helpers.AddFriendResponse;
+import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
+import utils.helpers.PublicEvent;
 
 public class Queries {
 
@@ -29,6 +32,8 @@ public class Queries {
 
 			String query = "select PostGIS_full_version()";
 			st = c.prepareStatement(query);
+			
+			Logger.info(st.toString());
 
 			rs = st.executeQuery();
 
@@ -77,6 +82,8 @@ public class Queries {
 			String query = "select count(*) from users where email = ?";
 			st = c.prepareStatement(query);
 			st.setString(1, email);
+			
+			Logger.info(st.toString());
 
 			rs = st.executeQuery();
 
@@ -160,11 +167,13 @@ public class Queries {
 			st = c.prepareStatement(query);
 			st.setString(1, email);
 			
+			Logger.info(st.toString());
+
 			rs = st.executeQuery();
 
 			while (rs.next())
 				response = new AddFriendResponse(200, rs.getString("email"),
-					rs.getString("name"));
+						rs.getString("name"));
 
 			return response;
 
@@ -188,4 +197,63 @@ public class Queries {
 
 	}
 
+	public NearbyPublicEventsResponse getNearbyPublicEvents(String lat,
+			String lon, String meters) {
+
+		PSQLConnection p = new PSQLConnection();
+		Connection c = p.connect();
+		PreparedStatement st = null;
+		ResultSet rs = null;
+
+		NearbyPublicEventsResponse response = new NearbyPublicEventsResponse(-1);
+
+		if (c == null) {
+			Logger.error(this.getClass().getName() + " connection null");
+			return null;
+		}
+
+		try {
+
+			String query = "select id, type, evdate, poster, description, ST_Y(evlocation) as lat, ST_X(evlocation) as lon "
+					+ "from publicevents "
+					+ "where ST_Transform(evlocation,3786) && ST_Expand(ST_Transform(ST_GeometryFromText(?,4326),3786),?) ";
+			st = c.prepareStatement(query);
+			st.setString(1, "POINT(" + lon + " " + lat + ")");
+			st.setInt(2, Integer.parseInt(meters));
+
+			Logger.info(st.toString());
+			
+			rs = st.executeQuery();
+
+			ArrayList<PublicEvent> events = new ArrayList<PublicEvent>();
+
+			while (rs.next())
+				events.add(new PublicEvent(rs.getInt("id"), rs.getInt("type"),
+						rs.getString("evdate"), rs.getString("poster"), rs
+								.getString("description"), rs.getString("lat"),
+						rs.getString("lon")));
+
+			response = new NearbyPublicEventsResponse(200,
+					events.toArray(new PublicEvent[events.size()]));
+
+			return response;
+
+		} catch (SQLException e) {
+			Logger.error(this.getClass().getName() + " " + e.toString());
+
+		} finally {
+			try {
+				if (st != null)
+					st.close();
+				if (rs != null)
+					rs.close();
+				if (c != null)
+					p.disconnect(c);
+			} catch (SQLException e) {
+				Logger.error(this.getClass().getName() + " " + e.toString());
+			}
+		}
+
+		return response;
+	}
 }
