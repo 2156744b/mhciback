@@ -32,7 +32,7 @@ public class Queries {
 
 			String query = "select PostGIS_full_version()";
 			st = c.prepareStatement(query);
-			
+
 			Logger.info(st.toString());
 
 			rs = st.executeQuery();
@@ -82,7 +82,7 @@ public class Queries {
 			String query = "select count(*) from users where email = ?";
 			st = c.prepareStatement(query);
 			st.setString(1, email);
-			
+
 			Logger.info(st.toString());
 
 			rs = st.executeQuery();
@@ -104,6 +104,8 @@ public class Queries {
 				st.setString(2, username);
 				st.setString(3, gcmid);
 
+				Logger.info(st.toString());
+
 				rs = st.executeQuery();
 
 				while (rs.next())
@@ -118,6 +120,8 @@ public class Queries {
 				st.setString(1, username);
 				st.setString(2, gcmid);
 				st.setString(3, email);
+
+				Logger.info(st.toString());
 
 				rs = st.executeQuery();
 
@@ -166,7 +170,7 @@ public class Queries {
 			String query = "select email, name from users where email = ?";
 			st = c.prepareStatement(query);
 			st.setString(1, email);
-			
+
 			Logger.info(st.toString());
 
 			rs = st.executeQuery();
@@ -214,7 +218,7 @@ public class Queries {
 
 		try {
 
-			String query = "select id, type, evdate, poster, description, ST_Y(evlocation) as lat, ST_X(evlocation) as lon "
+			String query = "select id, type, to_char(evdate, 'YYYY-MM-DD HH24:MI'), poster, description, ST_Y(evlocation) as lat, ST_X(evlocation) as lon "
 					+ "from publicevents "
 					+ "where ST_Transform(evlocation,3786) && ST_Expand(ST_Transform(ST_GeometryFromText(?,4326),3786),?) ";
 			st = c.prepareStatement(query);
@@ -222,7 +226,7 @@ public class Queries {
 			st.setInt(2, Integer.parseInt(meters));
 
 			Logger.info(st.toString());
-			
+
 			rs = st.executeQuery();
 
 			ArrayList<PublicEvent> events = new ArrayList<PublicEvent>();

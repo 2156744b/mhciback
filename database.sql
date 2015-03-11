@@ -56,4 +56,33 @@ create table users_privateevents (
 	accepted boolean,
 	primary key (email, event)
 );
+
+--population
+insert into publicevents(type, evdate, poster, description, location) values(1, TIMESTAMP '2011-05-16 15:36:38', 'http://www.creativefreedom.co.uk/wp-content/uploads/2013/03/00-android-4-0_icons.png', 'This is the event description. O Kurt einai malakas. AMEN', ST_GeomFromText(Point(-4.295654 55.864594), 4326)) 
+
+
+		MarkerOptions m1 = new MarkerOptions();
+		m1.position(new LatLng(55.864594, -4.295654));
+		m1.icon(BitmapDescriptorFactory.fromResource(R.drawable.art));
+
+		// 55.864811,-4.293573
+		MarkerOptions m2 = new MarkerOptions();
+		m2.position(new LatLng(55.864811, -4.293573));
+		m2.icon(BitmapDescriptorFactory.fromResource(R.drawable.club));
+
+		// 55.866027,-4.289914
+		MarkerOptions m3 = new MarkerOptions();
+		m3.position(new LatLng(55.866027, -4.289914));
+		m3.icon(BitmapDescriptorFactory.fromResource(R.drawable.restaurant));
+
+		ArrayList<String> m1Array = new ArrayList<String>();
+		m1Array.add("20/03/2015");
+		m1Array.add("ANTE GEIA!!!");
+		ArrayList<String> m2Array = new ArrayList<String>();
+		m2Array.add("23/03/2015");
+		m2Array.add("ANTE GEIA REEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+
+		ArrayList<String> m3Array = new ArrayList<String>();
+		m3Array.add("30/03/2015");
+		m3Array.add("Curt gios tis poutanas");
 	
