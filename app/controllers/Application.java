@@ -2,6 +2,7 @@ package controllers;
 
 import play.data.DynamicForm;
 import play.data.Form;
+import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import utils.database.Queries;
@@ -9,8 +10,6 @@ import utils.helpers.AddFriendResponse;
 import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
 import views.html.index;
-
-import com.google.gson.Gson;
 
 public class Application extends Controller {
 
@@ -22,10 +21,9 @@ public class Application extends Controller {
 
 		Queries q = new Queries();
 		PostgisVersion postgis = q.postgis_version();
-		Gson gson = new Gson();
 
 		if (postgis != null)
-			return ok(gson.toJson(postgis));
+			return ok(Json.toJson(postgis));
 
 		return status(500);
 
@@ -38,9 +36,8 @@ public class Application extends Controller {
 		Queries q = new Queries();
 		int status = q.register(df.get("email"), df.get("username"),
 				df.get("gcmid"));
-		Gson gson = new Gson();
 
-		return ok("{ \"rstatus\" : " + gson.toJson(status) + "}");
+		return ok("{ \"rstatus\" : " + Json.toJson(status) + "}");
 
 	}
 
@@ -51,9 +48,7 @@ public class Application extends Controller {
 		Queries q = new Queries();
 		AddFriendResponse response = q.addFriend(df.get("email"));
 
-		Gson gson = new Gson();
-
-		return ok(gson.toJson(response));
+		return ok(Json.toJson(response));
 
 	}
 
@@ -65,10 +60,7 @@ public class Application extends Controller {
 		NearbyPublicEventsResponse response = q.getNearbyPublicEvents(
 				df.get("lat"), df.get("lon"), df.get("radius"));
 
-		Gson gson = new Gson();
-
-		return ok(gson.toJson(response));
-
+		return ok(Json.toJson(response));
 
 	}
 

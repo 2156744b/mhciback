@@ -32,7 +32,7 @@ public class Queries {
 
 			String query = "select PostGIS_full_version()";
 			st = c.prepareStatement(query);
-			
+
 			Logger.info(st.toString());
 
 			Logger.info(st.toString());
@@ -84,7 +84,7 @@ public class Queries {
 			String query = "select count(*) from users where email = ?";
 			st = c.prepareStatement(query);
 			st.setString(1, email);
-			
+
 			Logger.info(st.toString());
 
 			Logger.info(st.toString());
@@ -222,7 +222,6 @@ public class Queries {
 
 		try {
 
-
 			String query = "select id, type, to_char(evdate, 'YYYY-MM-DD HH24:MI'), poster, description, ST_Y(evlocation) as lat, ST_X(evlocation) as lon "
 					+ "from publicevents "
 					+ "where ST_Transform(evlocation,3786) && ST_Expand(ST_Transform(ST_GeometryFromText(?,4326),3786),?) ";
@@ -236,11 +235,16 @@ public class Queries {
 
 			ArrayList<PublicEvent> events = new ArrayList<PublicEvent>();
 
-			while (rs.next())
+			while (rs.next()) {
+				Logger.info(
+						rs.getInt("id") + rs.getInt("type") +
+						rs.getString("evdate") + rs.getString("poster")
+								+ rs.getString("description"));
 				events.add(new PublicEvent(rs.getInt("id"), rs.getInt("type"),
 						rs.getString("evdate"), rs.getString("poster"), rs
 								.getString("description"), rs.getString("lat"),
 						rs.getString("lon")));
+			}
 
 			response = new NearbyPublicEventsResponse(200,
 					events.toArray(new PublicEvent[events.size()]));
