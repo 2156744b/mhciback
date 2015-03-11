@@ -32,6 +32,8 @@ public class Queries {
 
 			String query = "select PostGIS_full_version()";
 			st = c.prepareStatement(query);
+			
+			Logger.info(st.toString());
 
 			Logger.info(st.toString());
 
@@ -82,6 +84,8 @@ public class Queries {
 			String query = "select count(*) from users where email = ?";
 			st = c.prepareStatement(query);
 			st.setString(1, email);
+			
+			Logger.info(st.toString());
 
 			Logger.info(st.toString());
 
@@ -217,6 +221,7 @@ public class Queries {
 		}
 
 		try {
+
 
 			String query = "select id, type, to_char(evdate, 'YYYY-MM-DD HH24:MI'), poster, description, ST_Y(evlocation) as lat, ST_X(evlocation) as lon "
 					+ "from publicevents "

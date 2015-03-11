@@ -50,6 +50,7 @@ public class Application extends Controller {
 
 		Queries q = new Queries();
 		AddFriendResponse response = q.addFriend(df.get("email"));
+
 		Gson gson = new Gson();
 
 		return ok(gson.toJson(response));
@@ -63,9 +64,11 @@ public class Application extends Controller {
 		Queries q = new Queries();
 		NearbyPublicEventsResponse response = q.getNearbyPublicEvents(
 				df.get("lat"), df.get("lon"), df.get("radius"));
+
 		Gson gson = new Gson();
 
 		return ok(gson.toJson(response));
+
 
 	}
 
