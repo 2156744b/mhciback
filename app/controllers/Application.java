@@ -60,8 +60,7 @@ public class Application extends Controller {
 		NearbyPublicEventsResponse response = q.getNearbyPublicEvents(
 				df.get("lat"), df.get("lon"), df.get("radius"));
 
-		return ok("{ \"rstatus\" :" + Json.toJson(response.rstatus)
-				+ ", \"events\" :" + Json.toJson(response.events) + "}");
+		return ok(Json.toJson(response));
 
 	}
 

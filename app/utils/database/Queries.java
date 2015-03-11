@@ -222,7 +222,7 @@ public class Queries {
 
 		try {
 
-			String query = "select id, type, to_char(evdate, 'YYYY-MM-DD HH24:MI'), poster, description, ST_Y(evlocation) as lat, ST_X(evlocation) as lon "
+			String query = "select id, type, to_char(evdate, 'YYYY-MM-DD HH24:MI') as evdate, poster, description, ST_Y(evlocation) as lat, ST_X(evlocation) as lon "
 					+ "from publicevents "
 					+ "where ST_Transform(evlocation,3786) && ST_Expand(ST_Transform(ST_GeometryFromText(?,4326),3786),?) ";
 			st = c.prepareStatement(query);
