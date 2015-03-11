@@ -1,6 +1,6 @@
 // @SOURCE:/home/crunchbang/documents/MobHCI/mhciback/conf/routes
-// @HASH:91efe916e03592fdc386e4d68b6fc945604eebb7
-// @DATE:Tue Mar 10 20:12:49 GMT 2015
+// @HASH:e30ae579edafa7c15b56291051d320f5e152bfc6
+// @DATE:Wed Mar 11 02:23:55 GMT 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,18 +13,19 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:12
+// @LINE:13
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
 // @LINE:6
 package controllers {
 
-// @LINE:12
+// @LINE:13
 class ReverseAssets {
     
 
-// @LINE:12
+// @LINE:13
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -33,6 +34,7 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -43,12 +45,6 @@ class ReverseApplication {
 // @LINE:9
 def addFriend(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "addFriend")
-}
-                                                
-
-// @LINE:6
-def index(): Call = {
-   Call("GET", _prefix)
 }
                                                 
 
@@ -63,6 +59,18 @@ def postgisVersion(): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "postgis")
 }
                                                 
+
+// @LINE:10
+def nearbyPublicEvents(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "nearbyPublicEvents")
+}
+                                                
+
+// @LINE:6
+def index(): Call = {
+   Call("GET", _prefix)
+}
+                                                
     
 }
                           
@@ -70,18 +78,19 @@ def postgisVersion(): Call = {
                   
 
 
-// @LINE:12
+// @LINE:13
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:12
+// @LINE:13
 class ReverseAssets {
     
 
-// @LINE:12
+// @LINE:13
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -95,6 +104,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -108,17 +118,6 @@ def addFriend : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function() {
       return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addFriend"})
-      }
-   """
-)
-                        
-
-// @LINE:6
-def index : JavascriptReverseRoute = JavascriptReverseRoute(
-   "controllers.Application.index",
-   """
-      function() {
-      return _wA({method:"GET", url:"""" + _prefix + """"})
       }
    """
 )
@@ -145,6 +144,28 @@ def postgisVersion : JavascriptReverseRoute = JavascriptReverseRoute(
    """
 )
                         
+
+// @LINE:10
+def nearbyPublicEvents : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.nearbyPublicEvents",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "nearbyPublicEvents"})
+      }
+   """
+)
+                        
+
+// @LINE:6
+def index : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.index",
+   """
+      function() {
+      return _wA({method:"GET", url:"""" + _prefix + """"})
+      }
+   """
+)
+                        
     
 }
               
@@ -152,7 +173,8 @@ def postgisVersion : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:12
+// @LINE:13
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -160,11 +182,11 @@ def postgisVersion : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:12
+// @LINE:13
 class ReverseAssets {
     
 
-// @LINE:12
+// @LINE:13
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -173,6 +195,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:10
 // @LINE:9
 // @LINE:8
 // @LINE:7
@@ -186,12 +209,6 @@ def addFriend(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 )
                       
 
-// @LINE:6
-def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
-   controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
-)
-                      
-
 // @LINE:8
 def register(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.register(), HandlerDef(this, "controllers.Application", "register", Seq(), "POST", """""", _prefix + """register""")
@@ -201,6 +218,18 @@ def register(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
 // @LINE:7
 def postgisVersion(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.postgisVersion(), HandlerDef(this, "controllers.Application", "postgisVersion", Seq(), "GET", """""", _prefix + """postgis""")
+)
+                      
+
+// @LINE:10
+def nearbyPublicEvents(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.nearbyPublicEvents(), HandlerDef(this, "controllers.Application", "nearbyPublicEvents", Seq(), "POST", """""", _prefix + """nearbyPublicEvents""")
+)
+                      
+
+// @LINE:6
+def index(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Seq(), "GET", """ Home page""", _prefix + """""")
 )
                       
     

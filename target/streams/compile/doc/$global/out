@@ -15,7 +15,9 @@
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/database/PSQLConnection.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/database/Queries.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/AddFriendResponse.java[0m
+[0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/NearbyPublicEventsResponse.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/PostgisVersion.java[0m
+[0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/PublicEvent.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/src_managed/main/controllers/routes.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/src_managed/main/routes_reverseRouting.scala[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/src_managed/main/routes_routing.scala[0m

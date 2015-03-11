@@ -4,10 +4,14 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/conf/routes[0m
 [0m[[0mdebug[0m] [0m	openshift.conf[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/conf/openshift.conf[0m
+[0m[[0mdebug[0m] [0m	utils/helpers/NearbyPublicEventsResponse.java[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/NearbyPublicEventsResponse.java[0m
 [0m[[0mdebug[0m] [0m	utils/helpers/AddFriendResponse.java[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/AddFriendResponse.java[0m
 [0m[[0mdebug[0m] [0m	utils/database/PSQLConnection.java[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/app/utils/database/PSQLConnection.java[0m
+[0m[[0mdebug[0m] [0m	utils/helpers/PublicEvent.java[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/PublicEvent.java[0m
 [0m[[0mdebug[0m] [0m	application.conf[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/conf/application.conf[0m
 [0m[[0mdebug[0m] [0m	controllers/Application.java[0m
