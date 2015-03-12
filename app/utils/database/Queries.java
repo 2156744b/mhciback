@@ -36,8 +36,6 @@ public class Queries {
 
 			Logger.info(st.toString());
 
-			Logger.info(st.toString());
-
 			rs = st.executeQuery();
 
 			String result = "";
@@ -223,7 +221,7 @@ public class Queries {
 
 		try {
 
-			String query = "select id, type, to_char(evdate, 'YYYY-MM-DD HH24:MI') as evdate, poster, description, ST_Y(evlocation) as lat, ST_X(evlocation) as lon "
+			String query = "select id, type, creator, description, to_char(evdate, 'YYYY-MM-DD HH24:MI') as evdate, poster, url, telephone, description, ST_Y(evlocation) as lat, ST_X(evlocation) as lon, evlocationdescription "
 					+ "from publicevents "
 					+ "where ST_Transform(evlocation,3786) && ST_Expand(ST_Transform(ST_GeometryFromText(?,4326),3786),?) ";
 			st = c.prepareStatement(query);
@@ -239,9 +237,13 @@ public class Queries {
 			while (rs.next()) {
 
 				events.add(new PublicEvent(rs.getInt("id"), rs.getInt("type"),
-						rs.getString("evdate"), rs.getString("poster"), rs
-								.getString("description"), rs.getString("lat"),
-						rs.getString("lon")));
+						rs.getString("creator"), rs.getString("evdate"), rs
+								.getString("poster"), rs
+								.getString("description"), rs
+								.getString("telephone"), rs.getString("lat"),
+						rs.getString("lon"), rs
+								.getString("evlocationdescription"), rs
+								.getString("url")));
 			}
 
 			response = new NearbyPublicEventsResponse(200,
