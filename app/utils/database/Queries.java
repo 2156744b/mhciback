@@ -86,8 +86,6 @@ public class Queries {
 
 			Logger.info(st.toString());
 
-			Logger.info(st.toString());
-
 			rs = st.executeQuery();
 
 			int result = -1;
