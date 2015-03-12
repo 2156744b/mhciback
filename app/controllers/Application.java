@@ -1,5 +1,8 @@
 package controllers;
 
+import com.fasterxml.jackson.databind.JsonNode;
+
+import play.Logger;
 import play.data.DynamicForm;
 import play.data.Form;
 import play.libs.Json;
@@ -37,8 +40,10 @@ public class Application extends Controller {
 		Queries q = new Queries();
 		int status = q.register(df.get("email"), df.get("username"),
 				df.get("gcmid"));
-
-		return ok("{ \"rstatus\" : " + Json.toJson(status) + "}");
+		
+		JsonNode json = Json.toJson(status);
+		Logger.info(json.toString());
+		return ok("{ \"rstatus\" : " + json + "}");
 
 	}
 
@@ -49,7 +54,9 @@ public class Application extends Controller {
 		Queries q = new Queries();
 		AddFriendResponse response = q.addFriend(df.get("email"));
 
-		return ok(Json.toJson(response));
+		JsonNode json = Json.toJson(response);
+		Logger.info(json.toString());
+		return ok(json);
 
 	}
 
@@ -61,7 +68,9 @@ public class Application extends Controller {
 		NearbyPublicEventsResponse response = q.getNearbyPublicEvents(
 				df.get("lat"), df.get("lon"), df.get("radius"));
 
-		return ok(Json.toJson(response));
+		JsonNode json = Json.toJson(response);
+		Logger.info(json.toString());
+		return ok(json);
 
 	}
 
@@ -71,7 +80,9 @@ public class Application extends Controller {
 		Queries q = new Queries();
 		PublicEventResponse response = q.getPublicEvent(df.get("id"));
 
-		return ok(Json.toJson(response));
+		JsonNode json = Json.toJson(response);
+		Logger.info(json.toString());
+		return ok(json);
 
 	}
 
