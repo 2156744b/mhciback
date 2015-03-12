@@ -9,6 +9,7 @@ import utils.database.Queries;
 import utils.helpers.AddFriendResponse;
 import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
+import utils.helpers.PublicEventResponse;
 import views.html.index;
 
 public class Application extends Controller {
@@ -59,6 +60,16 @@ public class Application extends Controller {
 		Queries q = new Queries();
 		NearbyPublicEventsResponse response = q.getNearbyPublicEvents(
 				df.get("lat"), df.get("lon"), df.get("radius"));
+
+		return ok(Json.toJson(response));
+
+	}
+
+	public static Result getPublicEvent() {
+		DynamicForm df = Form.form().bindFromRequest();
+
+		Queries q = new Queries();
+		PublicEventResponse response = q.getPublicEvent(df.get("id"));
 
 		return ok(Json.toJson(response));
 

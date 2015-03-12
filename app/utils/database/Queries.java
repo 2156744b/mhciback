@@ -11,6 +11,7 @@ import utils.helpers.AddFriendResponse;
 import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
 import utils.helpers.PublicEvent;
+import utils.helpers.PublicEventResponse;
 
 public class Queries {
 
@@ -245,6 +246,68 @@ public class Queries {
 
 			response = new NearbyPublicEventsResponse(200,
 					events.toArray(new PublicEvent[events.size()]));
+
+			return response;
+
+		} catch (SQLException e) {
+			Logger.error(this.getClass().getName() + " " + e.toString());
+
+		} finally {
+			try {
+				if (st != null)
+					st.close();
+				if (rs != null)
+					rs.close();
+				if (c != null)
+					p.disconnect(c);
+			} catch (SQLException e) {
+				Logger.error(this.getClass().getName() + " " + e.toString());
+			}
+		}
+
+		return response;
+	}
+
+	public PublicEventResponse getPublicEvent(String id) {
+
+		PSQLConnection p = new PSQLConnection();
+		Connection c = p.connect();
+		PreparedStatement st = null;
+		ResultSet rs = null;
+
+		PublicEventResponse response = new PublicEventResponse(-1);
+
+		if (c == null) {
+			Logger.error(this.getClass().getName() + " connection null");
+			return null;
+		}
+
+		try {
+
+			String query = "select id, type, creator, description, to_char(evdate, 'YYYY-MM-DD HH24:MI') as evdate, poster, url, telephone, description, ST_Y(evlocation) as lat, ST_X(evlocation) as lon, evlocationdescription "
+					+ "from publicevents " + "where id = ? ";
+			st = c.prepareStatement(query);
+			st.setString(1, id);
+
+			Logger.info(st.toString());
+
+			rs = st.executeQuery();
+
+			ArrayList<PublicEvent> events = new ArrayList<PublicEvent>();
+
+			while (rs.next()) {
+
+				events.add(new PublicEvent(rs.getInt("id"), rs.getInt("type"),
+						rs.getString("creator"), rs.getString("evdate"), rs
+								.getString("poster"), rs
+								.getString("description"), rs
+								.getString("telephone"), rs.getString("lat"),
+						rs.getString("lon"), rs
+								.getString("evlocationdescription"), rs
+								.getString("url")));
+			}
+
+			response = new PublicEventResponse(200, events.get(0));
 
 			return response;
 
