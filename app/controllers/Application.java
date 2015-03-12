@@ -36,11 +36,12 @@ public class Application extends Controller {
 	public static Result register() {
 
 		DynamicForm df = Form.form().bindFromRequest();
+		Logger.info(Form.form().bindFromRequest().toString());
 
 		Queries q = new Queries();
 		int status = q.register(df.get("email"), df.get("username"),
 				df.get("gcmid"));
-		
+
 		JsonNode json = Json.toJson(status);
 		Logger.info(json.toString());
 		return ok("{ \"rstatus\" : " + json + "}");
