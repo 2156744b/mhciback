@@ -9,6 +9,7 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import utils.database.Queries;
+import utils.gcm.GCMCommunication;
 import utils.helpers.AddFriendResponse;
 import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
@@ -25,6 +26,9 @@ public class Application extends Controller {
 
 		Queries q = new Queries();
 		PostgisVersion postgis = q.postgis_version();
+		
+		GCMCommunication gcm = new GCMCommunication();
+		gcm.createFriendsEvent();
 
 		if (postgis != null)
 			return ok(Json.toJson(postgis));
