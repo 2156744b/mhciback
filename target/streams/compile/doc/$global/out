@@ -14,7 +14,10 @@
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/controllers/Application.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/database/PSQLConnection.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/database/Queries.java[0m
+[0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/gcm/GCMCommunication.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/AddFriendResponse.java[0m
+[0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/FriendEvent.java[0m
+[0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/FriendEventResponse.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/NearbyPublicEventsResponse.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/PostgisVersion.java[0m
 [0m[[0mdebug[0m] [0m	/home/crunchbang/documents/MobHCI/mhciback/app/utils/helpers/PublicEvent.java[0m

@@ -1,6 +1,6 @@
 // @SOURCE:/home/crunchbang/documents/MobHCI/mhciback/conf/routes
-// @HASH:fcbaca18ee19c96b697d437a39f72b3bce31247a
-// @DATE:Thu Mar 12 19:26:08 GMT 2015
+// @HASH:a8019b140bc4e873de425e1c8f0b42599bc20bec
+// @DATE:Wed Mar 18 22:56:11 GMT 2015
 
 
 import play.core._
@@ -52,10 +52,14 @@ private[this] lazy val controllers_Application_nearbyPublicEvents4 = Route("POST
 private[this] lazy val controllers_Application_getPublicEvent5 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("getPublicEvent"))))
         
 
-// @LINE:14
-private[this] lazy val controllers_Assets_at6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:12
+private[this] lazy val controllers_Application_createFriendEvent6 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("createFriendEvent"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """postgis""","""controllers.Application.postgisVersion()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addFriend""","""controllers.Application.addFriend()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """nearbyPublicEvents""","""controllers.Application.nearbyPublicEvents()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """getPublicEvent""","""controllers.Application.getPublicEvent()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:15
+private[this] lazy val controllers_Assets_at7 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """postgis""","""controllers.Application.postgisVersion()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addFriend""","""controllers.Application.addFriend()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """nearbyPublicEvents""","""controllers.Application.nearbyPublicEvents()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """getPublicEvent""","""controllers.Application.getPublicEvent()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """createFriendEvent""","""controllers.Application.createFriendEvent()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -111,8 +115,16 @@ case controllers_Application_getPublicEvent5(params) => {
 }
         
 
-// @LINE:14
-case controllers_Assets_at6(params) => {
+// @LINE:12
+case controllers_Application_createFriendEvent6(params) => {
+   call { 
+        invokeHandler(controllers.Application.createFriendEvent(), HandlerDef(this, "controllers.Application", "createFriendEvent", Nil,"POST", """""", Routes.prefix + """createFriendEvent"""))
+   }
+}
+        
+
+// @LINE:15
+case controllers_Assets_at7(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }
