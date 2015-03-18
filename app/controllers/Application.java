@@ -85,5 +85,10 @@ public class Application extends Controller {
 		return ok(json);
 
 	}
+	
+	public static Result createFriendEvent() {
+		
+		return null;
+	}
 
 }

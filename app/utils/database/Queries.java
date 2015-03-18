@@ -8,6 +8,8 @@ import java.util.ArrayList;
 
 import play.Logger;
 import utils.helpers.AddFriendResponse;
+import utils.helpers.FriendEvent;
+import utils.helpers.FriendEventResponse;
 import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
 import utils.helpers.PublicEvent;
@@ -329,4 +331,65 @@ public class Queries {
 
 		return response;
 	}
+
+	public FriendEventResponse createFriendEvent(String creator, String lon,
+			String lat, String timestamp, String locdescription,
+			String description, String friends) {
+
+		PSQLConnection p = new PSQLConnection();
+		Connection c = p.connect();
+		PreparedStatement st = null;
+		ResultSet rs = null;
+
+		FriendEventResponse response = new FriendEventResponse(-1);
+
+		if (c == null) {
+			Logger.error(this.getClass().getName() + " connection null");
+			return null;
+		}
+
+		try {
+
+			String query = "insert into privateevents(creator, description, evdate, evlocation, evlocationdescription "
+					+ "values(?,?,?,?,?) returning id";
+
+			st = c.prepareStatement(query);
+			st.setString(1, creator);
+			st.setString(2, description);
+			st.setLong(3, Long.parseLong(timestamp));
+			st.setString(4, "POINT(" + lon + " " + lat + ")");
+			st.setString(5, locdescription);
+
+			Logger.info(st.toString());
+
+			rs = st.executeQuery();
+
+			ArrayList<FriendEvent> events = new ArrayList<FriendEvent>();
+
+			while (rs.next()) {
+
+			}
+
+			response = new FriendEventResponse(200, events.get(0));
+
+			return response;
+
+		} catch (SQLException e) {
+			Logger.error(this.getClass().getName() + " " + e.toString());
+
+		} finally {
+			try {
+				if (st != null)
+					st.close();
+				if (rs != null)
+					rs.close();
+				if (c != null)
+					p.disconnect(c);
+			} catch (SQLException e) {
+				Logger.error(this.getClass().getName() + " " + e.toString());
+			}
+		}
+
+		return response;
+	};
 }
