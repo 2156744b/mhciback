@@ -98,7 +98,21 @@ public class Application extends Controller {
 				df.get("friends"));
 
 		JsonNode json = Json.toJson(response);
-
+		Logger.info(json.toString());
 		return ok(json);
+	}
+
+	public static Result getFriendEvents() {
+
+		DynamicForm df = Form.form().bindFromRequest();
+
+		Queries q = new Queries();
+		FriendEventResponse response = q.getFriendEvents(df.get("lat"),
+				df.get("lon"));
+
+		JsonNode json = Json.toJson(response);
+		Logger.info(json.toString());
+		return ok(json);
+
 	}
 }

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import play.Logger;
 import utils.gcm.GCMCommunication;
 import utils.helpers.AddFriendResponse;
+import utils.helpers.FriendEvent;
 import utils.helpers.FriendEventResponse;
 import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
@@ -451,5 +452,66 @@ public class Queries {
 		}
 
 		return response;
-	};
+	}
+
+	public FriendEventResponse getFriendEvents(String lat, String lon) {
+
+		PSQLConnection p = new PSQLConnection();
+		Connection c = p.connect();
+		PreparedStatement st = null;
+		ResultSet rs = null;
+
+		FriendEventResponse response = new FriendEventResponse(-1);
+
+		if (c == null) {
+			Logger.error(this.getClass().getName() + " connection null");
+			return null;
+		}
+
+		try {
+
+			String query = "select id, creator, description, to_char(evdate, 'YYYY-MM-DD HH24:MI') as evdate, ST_Y(evlocation) as lat, ST_X(evlocation) as lon, evlocationdescription "
+					+ "from privateevents "
+					+ "where ST_Transform(evlocation,3786) && ST_Expand(ST_Transform(ST_GeometryFromText(?,4326),3786),?) ";
+			st = c.prepareStatement(query);
+			st.setString(1, "POINT(" + lon + " " + lat + ")");
+
+			Logger.info(st.toString());
+
+			rs = st.executeQuery();
+
+			ArrayList<FriendEvent> events = new ArrayList<FriendEvent>();
+
+			while (rs.next()) {
+
+				events.add(new FriendEvent(rs.getInt("id"), rs
+						.getString("creator"), rs.getString("description"), rs
+						.getString("evdate"), rs.getString("lat"), rs
+						.getString("lon"), rs
+						.getString("evlocationdescription")));
+			}
+
+			response = new FriendEventResponse(200,
+					events.toArray(new FriendEvent[events.size()]));
+
+			return response;
+
+		} catch (SQLException e) {
+			Logger.error(this.getClass().getName() + " " + e.toString());
+
+		} finally {
+			try {
+				if (st != null)
+					st.close();
+				if (rs != null)
+					rs.close();
+				if (c != null)
+					p.disconnect(c);
+			} catch (SQLException e) {
+				Logger.error(this.getClass().getName() + " " + e.toString());
+			}
+		}
+
+		return response;
+	}
 }
