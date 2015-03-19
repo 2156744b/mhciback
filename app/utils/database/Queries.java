@@ -474,7 +474,6 @@ public class Queries {
 					+ "from privateevents ";
 
 			st = c.prepareStatement(query);
-			st.setString(1, "POINT(" + lon + " " + lat + ")");
 
 			Logger.info(st.toString());
 
