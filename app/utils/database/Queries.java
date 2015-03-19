@@ -353,7 +353,7 @@ public class Queries {
 		try {
 
 			String query = "insert into privateevents(creator, description, evdate, evlocation, evlocationdescription) "
-					+ "values(?,?,?,ST_GeometryFromText(?,4326),?) returning id";
+					+ "values(?,?,?,ST_GeometryFromText(?,4326),?) returning to_char(evdate, 'YYYY-MM-DD HH24:MI')";
 
 			st = c.prepareStatement(query);
 			st.setString(1, creator);
@@ -369,7 +369,7 @@ public class Queries {
 			while (rs.next()) {
 				response = new FriendEventResponse(200);
 				GCMCommunication gcm = new GCMCommunication();
-				gcm.createFriendsEvent(timestamp, locdescription, description,
+				gcm.createFriendsEvent(rs.getString(1), locdescription, description,
 						lat, lon, getGCMId(friends));
 			}
 
