@@ -4,7 +4,7 @@
 		module="mhciback_2.10"
 		revision="1.0-SNAPSHOT"
 		status="integration"
-		publication="20150319012313"
+		publication="20150319013254"
 	>
 		<description>
 		mhciback

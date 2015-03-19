@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import play.Logger;
@@ -356,7 +357,7 @@ public class Queries {
 			st = c.prepareStatement(query);
 			st.setString(1, creator);
 			st.setString(2, description);
-			st.setString(3, "TIMESTAMP '" + timestamp + "'");
+			st.setTimestamp(3, new Timestamp(Long.parseLong(timestamp)));
 			st.setString(4, "POINT(" + lon + " " + lat + ")");
 			st.setString(5, locdescription);
 
