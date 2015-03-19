@@ -1,6 +1,6 @@
 // @SOURCE:/home/crunchbang/documents/MobHCI/mhciback/conf/routes
-// @HASH:a8019b140bc4e873de425e1c8f0b42599bc20bec
-// @DATE:Thu Mar 19 01:52:49 GMT 2015
+// @HASH:e240cff212397957ad83fbfa319f1456f0dbd0c0
+// @DATE:Thu Mar 19 21:16:08 GMT 2015
 
 
 import play.core._
@@ -56,10 +56,14 @@ private[this] lazy val controllers_Application_getPublicEvent5 = Route("POST", P
 private[this] lazy val controllers_Application_createFriendEvent6 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("createFriendEvent"))))
         
 
-// @LINE:15
-private[this] lazy val controllers_Assets_at7 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+// @LINE:13
+private[this] lazy val controllers_Application_getFriendEvents7 = Route("POST", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("getFriendEvents"))))
         
-def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """postgis""","""controllers.Application.postgisVersion()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addFriend""","""controllers.Application.addFriend()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """nearbyPublicEvents""","""controllers.Application.nearbyPublicEvents()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """getPublicEvent""","""controllers.Application.getPublicEvent()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """createFriendEvent""","""controllers.Application.createFriendEvent()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+
+// @LINE:16
+private[this] lazy val controllers_Assets_at8 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """postgis""","""controllers.Application.postgisVersion()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """register""","""controllers.Application.register()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """addFriend""","""controllers.Application.addFriend()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """nearbyPublicEvents""","""controllers.Application.nearbyPublicEvents()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """getPublicEvent""","""controllers.Application.getPublicEvent()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """createFriendEvent""","""controllers.Application.createFriendEvent()"""),("""POST""", prefix + (if(prefix.endsWith("/")) "" else "/") + """getFriendEvents""","""controllers.Application.getFriendEvents()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
   case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
   case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
 }}
@@ -123,8 +127,16 @@ case controllers_Application_createFriendEvent6(params) => {
 }
         
 
-// @LINE:15
-case controllers_Assets_at7(params) => {
+// @LINE:13
+case controllers_Application_getFriendEvents7(params) => {
+   call { 
+        invokeHandler(controllers.Application.getFriendEvents(), HandlerDef(this, "controllers.Application", "getFriendEvents", Nil,"POST", """""", Routes.prefix + """getFriendEvents"""))
+   }
+}
+        
+
+// @LINE:16
+case controllers_Assets_at8(params) => {
    call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
         invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
    }

@@ -6,6 +6,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/Routes$$anonfun$routes$1.class[0m
 [0m[[0mdebug[0m] [0m	public/stylesheets[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/public/stylesheets[0m
+[0m[[0mdebug[0m] [0m	controllers/ref/ReverseApplication$$anonfun$getFriendEvents$1.class[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/controllers/ref/ReverseApplication$$anonfun$getFriendEvents$1.class[0m
 [0m[[0mdebug[0m] [0m	Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/Routes$$anonfun$routes$1$$anonfun$applyOrElse$3$$anonfun$apply$3.class[0m
 [0m[[0mdebug[0m] [0m	controllers/ref/ReverseApplication$$anonfun$getPublicEvent$1.class[0m
@@ -66,6 +68,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/controllers/ref/ReverseApplication$$anonfun$nearbyPublicEvents$1.class[0m
 [0m[[0mdebug[0m] [0m	controllers/ref/ReverseAssets.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/controllers/ref/ReverseAssets.class[0m
+[0m[[0mdebug[0m] [0m	Routes$$anonfun$routes$1$$anonfun$applyOrElse$9$$anonfun$apply$9.class[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/Routes$$anonfun$routes$1$$anonfun$applyOrElse$9$$anonfun$apply$9.class[0m
 [0m[[0mdebug[0m] [0m	Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/Routes$$anonfun$routes$1$$anonfun$applyOrElse$2$$anonfun$apply$2.class[0m
 [0m[[0mdebug[0m] [0m	public/javascripts/jquery-1.9.0.min.js[0m
@@ -118,6 +122,8 @@
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/views/html/main.class[0m
 [0m[[0mdebug[0m] [0m	utils/helpers/PublicEventResponse.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/utils/helpers/PublicEventResponse.class[0m
+[0m[[0mdebug[0m] [0m	Routes$$anonfun$routes$1$$anonfun$applyOrElse$9.class[0m
+[0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/Routes$$anonfun$routes$1$$anonfun$applyOrElse$9.class[0m
 [0m[[0mdebug[0m] [0m	controllers/ref/ReverseApplication$$anonfun$createFriendEvent$1.class[0m
 [0m[[0mdebug[0m] [0m	  /home/crunchbang/documents/MobHCI/mhciback/target/scala-2.10/classes/controllers/ref/ReverseApplication$$anonfun$createFriendEvent$1.class[0m
 [0m[[0mdebug[0m] [0m	utils/helpers/NearbyPublicEventsResponse.class[0m

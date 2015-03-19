@@ -1,6 +1,6 @@
 // @SOURCE:/home/crunchbang/documents/MobHCI/mhciback/conf/routes
-// @HASH:a8019b140bc4e873de425e1c8f0b42599bc20bec
-// @DATE:Thu Mar 19 01:52:49 GMT 2015
+// @HASH:e240cff212397957ad83fbfa319f1456f0dbd0c0
+// @DATE:Thu Mar 19 21:16:08 GMT 2015
 
 import Routes.{prefix => _prefix, defaultPrefix => _defaultPrefix}
 import play.core._
@@ -13,7 +13,8 @@ import play.libs.F
 import Router.queryString
 
 
-// @LINE:15
+// @LINE:16
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -23,11 +24,11 @@ import Router.queryString
 // @LINE:6
 package controllers {
 
-// @LINE:15
+// @LINE:16
 class ReverseAssets {
     
 
-// @LINE:15
+// @LINE:16
 def at(file:String): Call = {
    Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[PathBindable[String]].unbind("file", file))
 }
@@ -36,6 +37,7 @@ def at(file:String): Call = {
 }
                           
 
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -55,6 +57,12 @@ def createFriendEvent(): Call = {
 // @LINE:9
 def addFriend(): Call = {
    Call("POST", _prefix + { _defaultPrefix } + "addFriend")
+}
+                                                
+
+// @LINE:13
+def getFriendEvents(): Call = {
+   Call("POST", _prefix + { _defaultPrefix } + "getFriendEvents")
 }
                                                 
 
@@ -94,7 +102,8 @@ def index(): Call = {
                   
 
 
-// @LINE:15
+// @LINE:16
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -104,11 +113,11 @@ def index(): Call = {
 // @LINE:6
 package controllers.javascript {
 
-// @LINE:15
+// @LINE:16
 class ReverseAssets {
     
 
-// @LINE:15
+// @LINE:16
 def at : JavascriptReverseRoute = JavascriptReverseRoute(
    "controllers.Assets.at",
    """
@@ -122,6 +131,7 @@ def at : JavascriptReverseRoute = JavascriptReverseRoute(
 }
               
 
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -149,6 +159,17 @@ def addFriend : JavascriptReverseRoute = JavascriptReverseRoute(
    """
       function() {
       return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addFriend"})
+      }
+   """
+)
+                        
+
+// @LINE:13
+def getFriendEvents : JavascriptReverseRoute = JavascriptReverseRoute(
+   "controllers.Application.getFriendEvents",
+   """
+      function() {
+      return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "getFriendEvents"})
       }
    """
 )
@@ -215,7 +236,8 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
         
 
 
-// @LINE:15
+// @LINE:16
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -226,11 +248,11 @@ def index : JavascriptReverseRoute = JavascriptReverseRoute(
 package controllers.ref {
 
 
-// @LINE:15
+// @LINE:16
 class ReverseAssets {
     
 
-// @LINE:15
+// @LINE:16
 def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]), "GET", """ Map static resources from the /public folder to the /assets URL path""", _prefix + """assets/$file<.+>""")
 )
@@ -239,6 +261,7 @@ def at(path:String, file:String): play.api.mvc.HandlerRef[_] = new play.api.mvc.
 }
                           
 
+// @LINE:13
 // @LINE:12
 // @LINE:11
 // @LINE:10
@@ -258,6 +281,12 @@ def createFriendEvent(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRe
 // @LINE:9
 def addFriend(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
    controllers.Application.addFriend(), HandlerDef(this, "controllers.Application", "addFriend", Seq(), "POST", """""", _prefix + """addFriend""")
+)
+                      
+
+// @LINE:13
+def getFriendEvents(): play.api.mvc.HandlerRef[_] = new play.api.mvc.HandlerRef(
+   controllers.Application.getFriendEvents(), HandlerDef(this, "controllers.Application", "getFriendEvents", Seq(), "POST", """""", _prefix + """getFriendEvents""")
 )
                       
 
