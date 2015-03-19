@@ -429,7 +429,7 @@ public class Queries {
 			rs = st.executeQuery();
 
 			while (rs.next()) {
-				response += rs.getString(0);
+				response += rs.getString("gcmid");
 			}
 
 			return response;
