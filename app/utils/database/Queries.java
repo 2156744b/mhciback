@@ -352,7 +352,7 @@ public class Queries {
 		try {
 
 			String query = "insert into privateevents(creator, description, evdate, evlocation, evlocationdescription) "
-					+ "values(?,?,?,?,?) returning id";
+					+ "values(?,?,?,ST_GeometryFromText(?,4326),?) returning id";
 
 			st = c.prepareStatement(query);
 			st.setString(1, creator);
