@@ -25,7 +25,7 @@ public class GCMCommunication {
 			StringEntity params = new StringEntity(
 					"{ \"data\": {\"timestamp\": \"" + timestamp
 							+ "\",\"locDescription\": \"" + locDescription
-							+ "\",\"locDescription\": \"" + evdescription
+							+ "\",\"description\": \"" + evdescription
 							+ "\",\"lon\": \"" + lon + "\",\"lat\": \"" + lat
 							+ "\"}" + ",\"delay_while_idle\" : false,"
 							+ "\"registration_ids\": [\"" + friends + "\"]}");
