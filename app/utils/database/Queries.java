@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import play.Logger;
+import utils.gcm.GCMCommunication;
 import utils.helpers.AddFriendResponse;
-import utils.helpers.FriendEvent;
 import utils.helpers.FriendEventResponse;
 import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
@@ -364,13 +364,72 @@ public class Queries {
 
 			rs = st.executeQuery();
 
-			ArrayList<FriendEvent> events = new ArrayList<FriendEvent>();
-
 			while (rs.next()) {
-
+				response = new FriendEventResponse(200);
+				GCMCommunication gcm = new GCMCommunication();
+				gcm.createFriendsEvent(timestamp, locdescription, description,
+						lat, lon, getGCMId(friends));
 			}
 
-			response = new FriendEventResponse(200, events.get(0));
+			return response;
+
+		} catch (SQLException e) {
+			Logger.error(this.getClass().getName() + " " + e.toString());
+
+		} finally {
+			try {
+				if (st != null)
+					st.close();
+				if (rs != null)
+					rs.close();
+				if (c != null)
+					p.disconnect(c);
+			} catch (SQLException e) {
+				Logger.error(this.getClass().getName() + " " + e.toString());
+			}
+		}
+
+		return response;
+	};
+
+	public String getGCMId(String friends) {
+
+		PSQLConnection p = new PSQLConnection();
+		Connection c = p.connect();
+		PreparedStatement st = null;
+		ResultSet rs = null;
+
+		String response = "";
+
+		if (c == null) {
+			Logger.error(this.getClass().getName() + " connection null");
+			return null;
+		}
+
+		try {
+			String[] recipients = friends.split(";");
+			String query = "select gcmid from users where ";
+
+			for (int i = 0; i < recipients.length; i++) {
+				if (i == 0)
+					query += " email = ?";
+				else
+					query += " or email = ?";
+			}
+
+			st = c.prepareStatement(query);
+
+			for (int i = 0; i < recipients.length; i++) {
+				st.setString(i + 1, recipients[i]);
+			}
+
+			Logger.info(st.toString());
+
+			rs = st.executeQuery();
+
+			while (rs.next()) {
+				response += rs.getString(0);
+			}
 
 			return response;
 

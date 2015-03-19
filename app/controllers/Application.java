@@ -1,7 +1,5 @@
 package controllers;
 
-import com.fasterxml.jackson.databind.JsonNode;
-
 import play.Logger;
 import play.data.DynamicForm;
 import play.data.Form;
@@ -9,12 +7,14 @@ import play.libs.Json;
 import play.mvc.Controller;
 import play.mvc.Result;
 import utils.database.Queries;
-import utils.gcm.GCMCommunication;
 import utils.helpers.AddFriendResponse;
+import utils.helpers.FriendEventResponse;
 import utils.helpers.NearbyPublicEventsResponse;
 import utils.helpers.PostgisVersion;
 import utils.helpers.PublicEventResponse;
 import views.html.index;
+
+import com.fasterxml.jackson.databind.JsonNode;
 
 public class Application extends Controller {
 
@@ -26,9 +26,6 @@ public class Application extends Controller {
 
 		Queries q = new Queries();
 		PostgisVersion postgis = q.postgis_version();
-		
-		GCMCommunication gcm = new GCMCommunication();
-		gcm.createFriendsEvent();
 
 		if (postgis != null)
 			return ok(Json.toJson(postgis));
@@ -89,10 +86,19 @@ public class Application extends Controller {
 		return ok(json);
 
 	}
-	
-	public static Result createFriendEvent() {
-		
-		return null;
-	}
 
+	public static Result createFriendEvent() {
+
+		DynamicForm df = Form.form().bindFromRequest();
+
+		Queries q = new Queries();
+		FriendEventResponse response = q.createFriendEvent(df.get("creator"),
+				df.get("lon"), df.get("lat"), df.get("timestamp"),
+				df.get("locdescription"), df.get("description"),
+				df.get("friends"));
+
+		JsonNode json = Json.toJson(response);
+
+		return ok(json);
+	}
 }

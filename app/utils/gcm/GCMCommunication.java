@@ -12,7 +12,8 @@ public class GCMCommunication {
 	private String gcmAuthKey = "AIzaSyBPHmXXZyDaTgcRU5UMXz6vjmBwJkh4CWQ";
 	private String regid = "APA91bEjm31zpuqytSm545jruSptqmSa4ykIgC-seFkrHYqSTRuczGVWENLeo8Yq65Sw7V9zldyo6PODgbcNqUG7URU-1Q7NPQG-fwMn42ATS-R5VLzvnMH_mGCmcLhPS-S249DSKrAdsxQoHhSyf3MoECAnI2Z1LgNcYUTHMjMZugE6zHHOBvg";
 
-	public void createFriendsEvent() {
+	public void createFriendsEvent(String timestamp, String locDescription,
+			String evdescription, String lat, String lon, String friends) {
 		try {
 			String REQUEST_URL = "https://android.googleapis.com/gcm/send";
 
@@ -22,11 +23,13 @@ public class GCMCommunication {
 			httpPost.setHeader("Authorization", "key=" + gcmAuthKey);
 			httpPost.setHeader("Content-Type", "application/json");
 
-			StringEntity params = new StringEntity("{ \"data\": {\"type\": \""
-					+ 0 + "\",\"appId\": \"" + 12 + "\",\"lon\": \"" + 12
-					+ "\",\"lat\": \"" + 12 + "\"}"
-					+ ",\"delay_while_idle\" : false,"
-					+ "\"registration_ids\": [\"" + regid + "\"]}");
+			StringEntity params = new StringEntity(
+					"{ \"data\": {\"timestamp\": \"" + timestamp
+							+ "\",\"locDescription\": \"" + locDescription
+							+ "\",\"locDescription\": \"" + evdescription
+							+ "\",\"lon\": \"" + lon + "\",\"lat\": \"" + lat
+							+ "\"}" + ",\"delay_while_idle\" : false,"
+							+ "\"registration_ids\": [\"" + friends + "\"]}");
 
 			httpPost.setEntity(params);
 
