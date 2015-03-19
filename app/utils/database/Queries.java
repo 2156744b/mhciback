@@ -356,7 +356,7 @@ public class Queries {
 			st = c.prepareStatement(query);
 			st.setString(1, creator);
 			st.setString(2, description);
-			st.setString(3, "TIMESTAMP '+timestamp+'");
+			st.setString(3, "TIMESTAMP '" + timestamp + "'");
 			st.setString(4, "POINT(" + lon + " " + lat + ")");
 			st.setString(5, locdescription);
 
