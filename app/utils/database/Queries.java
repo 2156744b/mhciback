@@ -350,7 +350,7 @@ public class Queries {
 
 		try {
 
-			String query = "insert into privateevents(creator, description, evdate, evlocation, evlocationdescription "
+			String query = "insert into privateevents(creator, description, evdate, evlocation, evlocationdescription) "
 					+ "values(?,?,?,?,?) returning id";
 
 			st = c.prepareStatement(query);
