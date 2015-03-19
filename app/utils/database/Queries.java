@@ -471,8 +471,8 @@ public class Queries {
 		try {
 
 			String query = "select id, creator, description, to_char(evdate, 'YYYY-MM-DD HH24:MI') as evdate, ST_Y(evlocation) as lat, ST_X(evlocation) as lon, evlocationdescription "
-					+ "from privateevents "
-					+ "where ST_Transform(evlocation,3786) && ST_Expand(ST_Transform(ST_GeometryFromText(?,4326),3786),?) ";
+					+ "from privateevents ";
+
 			st = c.prepareStatement(query);
 			st.setString(1, "POINT(" + lon + " " + lat + ")");
 
